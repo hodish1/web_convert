@@ -10,5 +10,6 @@ module.exports.CLI_FORMAT_FILE_FORMAT_MAP = {
     "fpc": "fpc",
     "unipac": "fpc",
     "pacunicode": "fpc",
-    "pac": "pac"
+    "pac": "pac",
+    "cavena890": "890"
 }

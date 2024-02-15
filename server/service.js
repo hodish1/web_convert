@@ -41,7 +41,7 @@ async function convertFlow(req, res) {
     const convertData = _extractConvertData(req.file, req.body.format);
     await _convert(convertData);
     const data = await fs.readFile(convertData.targetPath);
-    res.status(200).json({ success: true, data, fileName: convertData.targetPath });
+    res.status(200).json({ success: true, subtitles: data.toString(), fileName: convertData.targetPath });
   } catch (error) {
     console.error({ error });
     res.status(500).json({ success: false, error });
