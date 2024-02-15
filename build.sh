@@ -1,0 +1,1 @@
+docker buildx build -t web_convert --platform linux/amd64 .
