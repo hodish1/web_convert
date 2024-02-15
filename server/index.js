@@ -1,6 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const { convertFlow } = require("./service");
+const { SERVER_IS_HEALTHY } = require("./constants");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -15,10 +16,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Healthy");
-});
-
 app.post("/convert", upload.single("subtitles"), convertFlow);
 
-app.listen(3000, () => console.log("Converter is up listening on 3000"));
+app.listen(3000, () => console.log(SERVER_IS_HEALTHY));
